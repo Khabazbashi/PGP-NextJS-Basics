@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Navbar from "../../components/Navbar";
+import Filter from "../../components/Filter";
 import Products from "../../components/Products";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
@@ -16,6 +17,11 @@ export default function Home() {
     setProducts(data);
   }, []);
 
+  function filterProducts(category) {
+    const filteredProducts = productsRepo.getByCategory(category);
+    setProducts(filteredProducts);
+  }
+
   if (!products) return <div>Loading...</div>;
 
   return (
@@ -29,6 +35,7 @@ export default function Home() {
       <main className={styles.main}>
         <Navbar />
         <h1 className={styles.title}>Our Products</h1>
+        <Filter filter={filterProducts} />
         <Products products={products} />
       </main>
     </div>
