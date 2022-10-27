@@ -1,11 +1,16 @@
-import styles from "../styles/Filter.module.css";
+import styles from "../styles/Navbar.module.css";
+import Link from "next/link";
+import Search from "./Search";
 
-export default function Navbar() {
+export default function Navbar({ search }) {
   return (
-    <div>
-      <h1>ADDAstore</h1>
-      <a>Home</a>
-      <a>Search</a>
+    <div className={styles.container}>
+      <Link href="/products">
+        <p className={styles.title}>
+          <span className={styles.titleSpan}>ADDA</span>LICIOUS
+        </p>
+      </Link>
+      <Search search={search} />
     </div>
   );
 }

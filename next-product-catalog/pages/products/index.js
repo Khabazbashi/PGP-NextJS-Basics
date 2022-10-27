@@ -22,6 +22,11 @@ export default function Home() {
     setProducts(filteredProducts);
   }
 
+  function searchProducts(input) {
+    const filteredProducts = productsRepo.getBySearch(input);
+    setProducts(filteredProducts);
+  }
+
   if (!products) return <div>Loading...</div>;
 
   return (
@@ -33,8 +38,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Navbar />
-        <h1 className={styles.title}>Our Products</h1>
+        <Navbar search={searchProducts} />
+        <div className={styles.campaign}></div>
         <Filter filter={filterProducts} />
         <Products products={products} />
       </main>
