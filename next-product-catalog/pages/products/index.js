@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { productsRepo } from "../../helpers/productsrepo";
+import ScrollButton from "../../components/ScrollButton";
 import Navbar from "../../components/Navbar";
 import Filter from "../../components/Filter";
 import Products from "../../components/Products";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
-import { productsRepo } from "../../helpers/productsrepo";
 
 export default function Home() {
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function Home() {
   }
 
   function searchProducts(input) {
-    const filteredProducts = productsRepo.getBySearch(input);
+    const filteredProducts = productsRepo.getByInput(input);
     setProducts(filteredProducts);
   }
 
@@ -42,6 +43,7 @@ export default function Home() {
         <div className={styles.campaign}></div>
         <Filter filter={filterProducts} />
         <Products products={products} />
+        <ScrollButton />
       </main>
     </div>
   );

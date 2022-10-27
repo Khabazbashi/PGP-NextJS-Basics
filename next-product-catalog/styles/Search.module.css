@@ -1,0 +1,82 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.input {
+    display: inline-block;
+    width: 100%;
+    text-align: end;
+    font-size: 18px;
+    padding: 0.8rem 3rem;
+    border-radius: 40px;
+}
+
+.exitIcon, .searchIcon {
+    width: 2em;
+    height: 2em;
+    position: relative;
+    top: 0.6rem;
+    right: 3rem;
+}
+
+@media (min-width: 768px) { 
+
+    .input {
+        width: 70%;
+    }
+
+}
+
+@media (min-width: 1024px) {  
+
+    .exitIcon, .searchIcon {
+        width: 2rem;
+        height: 2rem;
+        top: 0.5rem;
+        right: 3rem;
+    }
+
+}
+
+@media (min-width: 1280px) {  
+
+    .container {
+        flex-grow: 1;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: auto 1rem;
+    }
+
+    .input {
+        display: inline-block;
+        font-size: 20px;
+        text-align: end;
+        font-weight: 100;
+        padding: 1rem 4rem;
+        border-radius: 40px;
+        width: 17em;
+        transition: width 0.5s ease-in-out;
+        transition-delay: 1s;
+    }
+
+    .input:focus {
+        width: 50%;
+    }
+
+    .exitIcon, .searchIcon {
+        top: 13px;
+        right: 50px;
+    }
+
+}
+
+@media (min-width: 1536px) {  
+
+    .input {
+        width: 24rem;
+    }
+
+}

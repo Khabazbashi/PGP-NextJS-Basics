@@ -1,5 +1,4 @@
 let products = require("../data/data.json");
-let currentProducts = products;
 let currentCategories = [];
 
 export const productsRepo = {
@@ -7,7 +6,7 @@ export const productsRepo = {
   getById: (id) => products.find((x) => x.id.toString() === id.toString()),
   getCategories: () => Array.from(new Set(products.map((x) => x.category))),
   getByCategory,
-  getBySearch,
+  getByInput,
 };
 
 function getByCategory(category) {
@@ -25,16 +24,21 @@ function getByCategory(category) {
   const filteredProducts = products.filter((item) =>
     currentCategories.includes(item.category)
   );
+
   return filteredProducts;
 }
 
-function getBySearch(input) {
-  const filteredProducts = products.filter(
-    (i) => i.title.includes(input) || i.description.includes(input)
-  );
-
+function getByInput(input) {
   if (input === "") {
     return products;
   }
+
+  const filteredProducts = products.filter(
+    (i) =>
+      i.title.includes(input) ||
+      i.category.includes(input) ||
+      i.description.includes(input)
+  );
+
   return filteredProducts;
 }

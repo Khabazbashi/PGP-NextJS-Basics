@@ -15,7 +15,7 @@ const Filterelement = ({ category, filter }) => {
     setIsFilterActive(!isFilterActive);
     var item = document.getElementById(category);
     if (isFilterActive) {
-      item.style = "background-color:#57a6bf";
+      item.style = "background-color:#c3b29f";
     } else {
       item.style = "background-color:white";
     }

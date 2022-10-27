@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 
 const ScrollButton = () => {
   const router = useRouter();
-  const [mybutton, setmyButton] = useState();
+  const [scrollButton, setScrollButton] = useState();
 
   useEffect(() => {
     if (!router.isReady) return;
-    let mybutton = document.getElementById("myBtn");
-    setmyButton(mybutton);
+    let button = document.getElementById("sbtn");
+    setScrollButton(button);
   }, []);
 
   window.onscroll = function () {
@@ -21,9 +21,9 @@ const ScrollButton = () => {
       document.body.scrollTop > 20 ||
       document.documentElement.scrollTop > 20
     ) {
-      mybutton.style.display = "block";
+      scrollButton.style.display = "block";
     } else {
-      mybutton.style.display = "none";
+      scrollButton.style.display = "none";
     }
   }
 
@@ -34,7 +34,11 @@ const ScrollButton = () => {
 
   return (
     <div>
-      <button id="myBtn" className={styles.myBtn} onClick={() => topFunction()}>
+      <button
+        id="sbtn"
+        className={styles.scrollBtn}
+        onClick={() => topFunction()}
+      >
         <img className={styles.buttonImage} src="/top.png" />
       </button>
     </div>

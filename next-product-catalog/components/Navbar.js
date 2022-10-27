@@ -1,6 +1,6 @@
-import styles from "../styles/Navbar.module.css";
-import Link from "next/link";
 import Search from "./Search";
+import Link from "next/link";
+import styles from "../styles/Navbar.module.css";
 
 export default function Navbar({ search }) {
   return (

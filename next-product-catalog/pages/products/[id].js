@@ -21,19 +21,28 @@ const Product = () => {
   return (
     <div className={styles.container}>
       <Navbar />
-      <div className={styles.product}>
-        <div className={styles.productDetails}>
-          <p>This is product:</p>
-          <p>{product.title}</p>
-          <p>{product.category}</p>
-          <p>{product.description}</p>
-          <p>{product.price}</p>
+      <div className={styles.productContainer}>
+        <div className={styles.header}>
+          <Link href="/products">
+            <img className={styles.exitIcon} src="/exit.png" />
+          </Link>
         </div>
-        <div className={styles.imageContainer}>
-          <img className={styles.image} src={product.image} />
+
+        <div className={styles.product}>
+          <div className={styles.productDetails}>
+            <p className={styles.productCategory}>{product.category}</p>
+            <p className={styles.productTitle}>{product.title}</p>
+            <p className={styles.productDescription}>{product.description}</p>
+            <p className={styles.productPrice}>$ {product.price} </p>
+          </div>
+          <div className={styles.imageContainer}>
+            <img className={styles.image} src={product.image} />
+          </div>
+        </div>
+        <div className={styles.footer}>
+          <button className={styles.addButton}>ADD TO CART</button>
         </div>
       </div>
-      <Link href="/products">return</Link>
     </div>
   );
 };

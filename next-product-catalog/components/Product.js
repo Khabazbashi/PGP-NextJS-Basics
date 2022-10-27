@@ -9,9 +9,9 @@ export default function Product({ product }) {
           <img className={styles.image} src={product.image} />
         </div>
         <div className={styles.contentContainer}>
-          <a>{product.title}</a>
-          <a> {product.category}</a>
-          <a>{product.price}</a>
+          <a className={styles.productTitle}>{product.title}</a>
+          <a className={styles.productCategory}> {product.category}</a>
+          <a className={styles.productPrice}>$ {product.price}</a>
         </div>
       </div>
     </Link>

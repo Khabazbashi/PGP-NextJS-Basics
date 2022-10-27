@@ -1,18 +1,9 @@
+import { useState } from "react";
 import styles from "../styles/Search.module.css";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { productsRepo } from "../helpers/productsrepo";
 
 const Search = ({ search }) => {
-  const router = useRouter();
   const [input, setInput] = useState("");
   const [isFormActive, setIsFormActive] = useState(false);
-  const [products, setProducts] = useState();
-
-  //   useEffect(() => {
-  //     if (!router.isReady) return;
-  //     setProducts(data);
-  //   }, []);
 
   const handleChange = (e) => {
     if (isFormActive) {
@@ -23,6 +14,7 @@ const Search = ({ search }) => {
 
   const handleClick = () => {
     setInput("");
+    search("");
   };
 
   return (

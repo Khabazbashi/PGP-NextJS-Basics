@@ -1,0 +1,22 @@
+.category {
+    display: flex;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: white;
+    border: 1px solid #c3b29f;
+    margin: 5px 5px;
+    padding: 1em;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }
+
+  @media (min-width: 1280px) {  
+
+    .category {
+      border: 1px solid #c3b29f;
+      margin-right: 2rem;
+      font-size: 20px;
+    }
+  
+  }
+
