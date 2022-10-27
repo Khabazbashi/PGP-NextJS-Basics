@@ -7,7 +7,7 @@ export default function Navbar({ search }) {
     <div className={styles.container}>
       <Link href="/products">
         <p className={styles.title}>
-          <span className={styles.titleSpan}>ADDA</span>LICIOUS
+          <span className={styles.titleSpan}>MALL</span>MANIACS
         </p>
       </Link>
       <Search search={search} />
