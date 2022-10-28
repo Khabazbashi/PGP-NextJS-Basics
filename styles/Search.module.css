@@ -79,4 +79,8 @@
         width: 24rem;
     }
 
+    .input:focus {
+        width: 30%;
+    }
+
 }

@@ -22,13 +22,13 @@ const Product = () => {
     <div className={styles.container}>
       <Navbar />
       <div className={styles.productContainer}>
-        <div className={styles.header}>
+        <div className={styles.productHeader}>
           <Link href="/products">
             <img className={styles.exitIcon} src="/exit.png" />
           </Link>
         </div>
 
-        <div className={styles.product}>
+        <div className={styles.productContent}>
           <div className={styles.productDetails}>
             <p className={styles.productCategory}>{product.category}</p>
             <p className={styles.productTitle}>{product.title}</p>

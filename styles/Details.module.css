@@ -15,7 +15,7 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
-.header {
+.productHeader {
     display: flex;
     justify-content: flex-end;
     margin:auto;
@@ -27,7 +27,7 @@
     height: 2em;
 }
 
-.product {
+.productContent {
     display:flex;
     flex-direction: column;
     width: 90%;
@@ -110,7 +110,7 @@
 
 @media (min-width: 768px) { 
 
-    .product {
+    .productContent {
         height: 60em;
         width: 100%;
     }
@@ -153,8 +153,8 @@
         margin: auto;
     }
 
-    .product {
-        height: 50%;
+    .productContent {
+        height: 60%;
         flex-direction: row;
         flex-grow: 1;
     }
@@ -180,16 +180,16 @@
     }
 
     .footer {
-        height: 15%; 
-        margin: 0;
+        flex-grow: 1;
+        margin-top:0;
+    }
+
+    .productPrice {
+        padding-top: 1rem;
     }
 
     .addButton {
         padding: 0.7em;
-        background-color: white;
-        border: 2px #272720 solid;
-        letter-spacing: 2px;
-        font-size: 20px;
     }
  
     .productTitle {
@@ -199,4 +199,14 @@
         margin-top:0;
         margin-bottom: 20px;
     }
+}
+
+@media (min-width: 1536px) {  
+    .productContainer {
+        max-width: 80em;
+        width: 60%;
+        height: 50em;
+        margin: auto;
+    }
+
 }
